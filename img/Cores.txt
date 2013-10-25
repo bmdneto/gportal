@@ -1,0 +1,6 @@
+Cor barra de menu esquerda: #EEEEEE
+Cor barra menu selecionado: #9D9D9D
+Cor do conteúdo: Branco
+Fonte: verdana
+Cor fonte-menu: #777777
+Cor fonte barra de navegação: #9D9D9D

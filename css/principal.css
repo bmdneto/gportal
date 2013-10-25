@@ -1,0 +1,134 @@
+*{ 
+	margin:0; 
+	padding:0; 
+}
+
+#bar{
+	height: 45px;
+	background-color: #666;
+	background-image: url('../img/barra-nav.png');
+	background-repeat: repeat-x;
+}
+#bar a img{
+	margin: 10px 0 0 10px;
+}
+#bar .logo{
+	width: 214px;
+	height:45px;
+	border-right:1px solid #666;
+	float: left;
+}
+#bar .inicio{
+	width: 180px;
+	height:45px;
+	border-left:1px solid #000;
+	border-right:1px solid #666;
+	float: left;
+}
+#bar .inicio span{
+	margin:13px 9px 0 13px;
+	float: left;
+	color:#aaa;
+}
+#bar .inicio a{
+	display: block;
+	margin:13px 0 0 13px;
+	color:#aaa; 
+}
+#bar .inicio a:hover{
+	text-decoration: none;
+	color:#fff;
+}
+#bar .user-bar{
+	height:45px;
+	border-left:1px solid #000;
+	float: left;
+	color: #aaa;
+	padding-right: 0!important;
+}
+#content-box{
+	overflow:hidden;
+	padding-left: 40px;
+	text-align: justify;
+}
+.conteudo{
+	float: left;
+	overflow:hidden;
+	display: none;
+
+}
+.status{
+	float: right;
+	border-right:1px solid #666;
+	height:45px;
+	margin: 0;
+}
+.status p{
+	margin:13px 9px 0 13px;
+}
+.sair{
+	height: 45px;
+	border-left:1px solid #000;
+	float: left;
+	margin: 0;	
+}
+.sair p{
+	color:#aaa;
+	margin:12px 9px 0 0;
+	float: left;
+}
+.sair span{
+	float: left;
+	margin:13px 9px 0 13px;
+	color:#aaa;
+}
+
+#menu{
+	background-color: #eee;
+	height: 700px;
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 214px;
+	float: left;
+}
+#menu div{
+	height: 70px;
+}
+#menu div input{
+	margin: 23px 0 0 20px;
+	border: 1px solid #999;
+	border-radius: 10px;
+}
+#menu ul{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+#menu ul li{
+	list-style: none;
+	height: 100%;
+}
+#menu ul li span{
+	float: left;
+	padding: 10px 0 0 0 ;
+	margin: 0 20px 0 5px;
+}
+
+#menu ul li a{
+	text-decoration: none;
+	color:#777;
+	display: block;
+	background-image: url('../img/fundo-barra-menu-inativo.png');
+	height: 37px;
+	padding: 10px 0 0 0 ;
+}
+
+#menu ul li a:hover{
+	background-color: #ddd!important;
+	background-image: none;
+}
+
+.selected{
+	background-image: url('../img/fundo-barra-selecionada.png')!important;
+	background-repeat: repeat-x;
+}
+.bg{color:#aaa;}
