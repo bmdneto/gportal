@@ -1,0 +1,22 @@
+<?php
+
+	class criaPortal extends CI_Controller
+	{
+		function __contruct()
+		{
+			parent::__construct();
+		}
+
+		
+		public function index()
+		{
+			$this->load->helper('url');
+			$caminho = 'sites/' . $_POST["nomePortal"];
+
+			mkdir($caminho, 0744);
+
+			//echo base_url();
+		}
+	}
+
+?>
