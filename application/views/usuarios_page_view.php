@@ -1,4 +1,4 @@
-<div class="tab-content" id="tabs4">
+<div class="tab-conteudo" id="tabs4">
 	<h3>Gerenciar usuários</h3>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, similique, tenetur, dolorum quam commodi 
 	atque esse nemo illum sit ratione exercitationem maxime nobis alias ad quae tempora minus provident non quo 

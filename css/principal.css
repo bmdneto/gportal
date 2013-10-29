@@ -131,4 +131,20 @@
 	background-image: url('../img/fundo-barra-selecionada.png')!important;
 	background-repeat: repeat-x;
 }
-.bg{color:#aaa;}
+.bg{
+	color:#aaa;
+}
+.idiomas{
+	list-style-type: none;
+}
+.idiomas span{
+	display: inline-block;
+    height: 64px;
+    width: 64px;
+	background-color: 666px;
+	padding: 12px 0 0 80px;
+}
+.idiomas li{
+	display: block;
+	width: 200px;
+}

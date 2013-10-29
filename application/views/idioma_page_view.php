@@ -1,12 +1,37 @@
-<div class="tab-content" id="tabs3">
+<div class="tab-conteudo" id="tabs3">
 	<h3>Alterar idioma</h3>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, vel amet eius dolor molestias facilis 
-	quaerat aperiam ab dolore ipsum. Odit, laudantium, necessitatibus, consequatur, aliquam optio culpa accusamus 
-	aut earum laborum facere accusantium aliquid nihil debitis nemo et fuga perspiciatis doloremque distinctio ab 
-	obcaecati nostrum doloribus placeat quas explicabo id rerum at alias quae amet natus. Nulla, quis, ipsam, 
-	distinctio, culpa vitae reprehenderit itaque laudantium dolore commodi harum facere voluptates suscipit? 
-	Sed, sequi, quae, alias aspernatur soluta eius est reprehenderit saepe nam voluptate esse praesentium 
-	repellendus id laborum voluptas minus nihil magni aut accusamus commodi minima quis deserunt itaque quod 
-	enim quidem odit iste porro tenetur at impedit ea voluptatum quasi aliquid rem recusandae laudantium. Quas, 
-	dolorem nemo quos voluptatibus.
+
+	<ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a data-toggle="tab" href="#escolher">Escolher idioma do sistema</a></li>
+    <li><a data-toggle="tab" href="#cadastrar">Gerenciar arquivos de idiomas</a></li>
+  </ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="escolher">
+  	<h4>Idiomas</h4>
+  	<hr>
+  	<ul class="idiomas">
+  		<li><span>
+  			<div class="radio">
+			  	<label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+			    Português
+			  	</label>
+			</div></span></li>
+  		<li><span>
+  			<div class="radio">
+			  	<label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			    English
+			  	</label>
+			</div></span></li>
+  		</span></li>
+  	</ul>
+  </div>
+  <div class="tab-pane" id="cadastrar">...</div>
+ 
+  <hr>
+  <button class="btn btn-default" type="button">Salvar</button>
+</div>
+
 </div>

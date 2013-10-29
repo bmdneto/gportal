@@ -1,4 +1,4 @@
-<div class="tab-content" id="tabs1">
+<div class="tab-conteudo" id="tabs1">
 	<h3>Gerenciador de portais GPortais</h3>
 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quibusdam pariatur perspiciatis ea totam 
 	placeat consequatur dolorum corrupti provident non velit numquam excepturi consectetur nemo magni impedit 

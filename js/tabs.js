@@ -10,7 +10,7 @@
  
 function switch_tabs(obj)
 {
-	$('.tab-content').hide();
+	$('.tab-conteudo').hide();
 	$('.tabs a').removeClass("selected");
 	$('.tabs span').removeClass("bg");
 	var id = obj.attr("rel");
