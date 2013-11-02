@@ -62,7 +62,7 @@
   <h4>Formulário para criação de portais:</h4>
   <hr/>
 
-    <form class="form-horizontal" role="form" action="index.php/criaPortal" method="POST">
+    <form class="form-horizontal" role="form" action="index.php/gerenciaPortal" method="POST">
 
       <div class="form-group">
         <label for="nomePortal" class="col-lg-2 control-label">Nome do Portal</label>
@@ -74,14 +74,14 @@
       <div class="form-group">
         <label for="descricaoPortal" class="col-lg-2 control-label">Descrição</label>
         <div class="col-lg-10">
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" rows="3" name="descPortal" placeholder="Descrição do portal"></textarea>
         </div>
       </div>
 
       <!-- botão -->
       <div class="form-group">
         <div class="col-lg-offset-2 col-lg-10">
-          <button type="submit" class="btn btn-default">Enviar solicitação</button>
+          <button type="submit" name="botaoEnviar" class="btn btn-default">Enviar solicitação</button>
         </div>
       </div>
 

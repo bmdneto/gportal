@@ -15,6 +15,7 @@
 			$this->load->view('usuarios_page_view.php');
 			$this->load->view('rodape_view.php');
 		}
+
 		public function testes()
 		{
 			$this->load->model('Idioma');
