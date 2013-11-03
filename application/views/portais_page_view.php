@@ -28,6 +28,7 @@
           <th>Ações</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
           <td>1</td>
@@ -39,16 +40,20 @@
             <span class="glyphicon glyphicon-trash"></span>
           </td>
         </tr>
+        
+        <?php foreach ($query as $row): ?>
         <tr>
-          <td>2</td>
-          <td>Portal 2</td>
-          <td><a href="#">/connection/</a></td>
-          <td>igor.leonardo</td>
+          <td><?php echo $row->id_portal; ?></td>
+          <td><?php echo $row->nome; ?></td>
+          <td><?php echo $row->url; ?></td>
+          <td>bmdneto</td>
           <td>
             <span class="glyphicon glyphicon-edit"></span>
             <span class="glyphicon glyphicon-trash"></span>
           </td>
         </tr>
+      <?php endforeach; ?>
+
       </tbody>
     </table>
 
@@ -62,7 +67,7 @@
   <h4>Formulário para criação de portais:</h4>
   <hr/>
 
-    <form class="form-horizontal" role="form" action="index.php/gerenciaPortal" method="POST">
+    <form class="form-horizontal" role="form" action="index.php/Gerencia_portal" method="POST">
 
       <div class="form-group">
         <label for="nomePortal" class="col-lg-2 control-label">Nome do Portal</label>
