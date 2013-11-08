@@ -148,3 +148,11 @@
 	display: block;
 	width: 200px;
 }
+
+a.editor:link, a.editor:visited, a.editor:active {
+	color:#000;
+}
+
+a.editor:hover {
+	color:red;
+}
