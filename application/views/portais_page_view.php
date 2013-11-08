@@ -115,6 +115,21 @@
         </div>
       </div>
 
+      <!-- tipo de portal 
+           define o template padrão
+      -->
+      <div class="form-group">
+        <label for="tipoPortal" class="col-lg-2 control-label">Tipo de Portal</label>
+        <div class="col-lg-10">
+          <select class="form-control">
+            <option>Professor</option>
+            <option>Projeto</option>
+            <option>Página pessoal</option>
+            <option>Grupo de pesquisa</option>
+          </select>
+        </div>
+      </div>
+
       <!-- descricao -->
       <div class="form-group">
         <label for="descricaoPortal" class="col-lg-2 control-label">Descrição</label>
