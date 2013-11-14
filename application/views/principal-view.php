@@ -10,12 +10,12 @@
 						<span class="glyphicon glyphicon-cog"></span><a href="">Gerenciar portais</a>					</div>
 					<div class="user-bar col-md-7">
 						<div class="status">
-							<p>Bem vindo, usuario</p>
+							<p>Bem vindo, <?php echo $username?></p>
 						</div>
 					</div>
 					<div class="sair">
 						<span class="glyphicon glyphicon-off"></span>
-						<p>Sair</p>
+						<p><a href="principal/logout">Sair</a></p>
 					</div>
 			</div>
 		</div>

@@ -148,11 +148,10 @@
 	display: block;
 	width: 200px;
 }
-
-a.editor:link, a.editor:visited, a.editor:active {
-	color:#000;
+.body-login{
+	background-color: #002040;
 }
-
-a.editor:hover {
-	color:red;
+.login-box {
+	margin: 100px auto;
+	float: none;
 }
