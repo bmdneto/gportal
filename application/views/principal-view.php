@@ -10,7 +10,7 @@
 						<span class="glyphicon glyphicon-cog"></span><a href="">Gerenciar portais</a>					</div>
 					<div class="user-bar col-md-7">
 						<div class="status">
-							<p>Bem vindo, <?php echo $username?></p>
+							<p>Bem vindo, <?php echo $username ?></p>
 						</div>
 					</div>
 					<div class="sair">

@@ -51,7 +51,8 @@ class Model_Gerencia_portal extends CI_Model
 							</body>
 						 </html>
 						';
-				//write_file('./' . $this->url . '/index.php', $data);
+				//cria o arquivo index do portal
+				//write_file('./' . $this->url, $data);
 			}
 			else 
 			{
@@ -68,7 +69,7 @@ class Model_Gerencia_portal extends CI_Model
 		//se houver arquivos dentro, nao deleta
 		rmdir($url);
 		$this->db->where('id_portal', $var);
-		$this->db->delete('portais');	
+		$this->db->delete('portais_teste');	
 		
 		/*
 		echo "<script type='text/javascript'> 

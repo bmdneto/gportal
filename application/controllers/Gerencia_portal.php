@@ -9,13 +9,13 @@
 
 		public function index()
 		{
+			if(isset($_POST['botaoEnviar'])) {
+				$this->load->helper('url');
+				$this->load->model('Model_Gerencia_portal','',TRUE);
+				$this->Model_Gerencia_portal->inserirEntrada();
+			}
 			$this->load->helper('url');
-			$this->load->model('Model_Gerencia_portal','',TRUE);
-			$this->Model_Gerencia_portal->inserirEntrada();
-
-
-			$this->load->helper('url');
-			redirect('index.php#Gerencia_portal', 'refresh');
+			redirect('principal', 'refresh');
 		}
 
 		public function Remove_portal()
@@ -24,7 +24,7 @@
 			$this->Model_Gerencia_portal->removePortal($_POST['botaoRemover'],$_POST['Url']);
 			
 			$this->load->helper('url');
-			redirect('index.php#Gerencia_portal', 'refresh');
+			redirect('principal', 'refresh');
 		}
 
 	}

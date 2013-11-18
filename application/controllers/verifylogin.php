@@ -17,7 +17,8 @@ class VerifyLogin extends CI_Controller {
 	
     if($this->form_validation->run() == FALSE)
     {
-      //Field validation failed.  User redirected to login page
+      //Field validation failed. User redirected to login page
+      echo "<script>alert('login invalido');</script>";
       redirect('login', 'refresh');
     }
 
@@ -32,7 +33,7 @@ class VerifyLogin extends CI_Controller {
   {
     //Field validation succeeded.  Validate against database
     $username = $this->input->post('username');
-    echo $username;
+    echo $username.'~';
     echo $password;
 
     //query the database

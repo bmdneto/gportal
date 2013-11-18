@@ -52,7 +52,7 @@
 
           <td>
             <!-- botao remover -->
-            <form class="form-horizontal" role="form" action="index.php/Gerencia_portal/Remove_portal" method="POST">
+            <form class="form-horizontal" role="form" action="Gerencia_portal/Remove_portal" method="POST">
 
               <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
