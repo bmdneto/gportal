@@ -49,9 +49,15 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
+<<<<<<< HEAD
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
 $db['default']['database'] = 'portais';
+=======
+$db['default']['username'] = 'admin';
+$db['default']['password'] = 'admin';
+$db['default']['database'] = 'g_portais';
+>>>>>>> f6dd3e86b543c798a604a0edc6a58c7948310dc8
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -31,7 +31,7 @@ class Model_Gerencia_portal extends CI_Model
 		$this->descPortal 	= $_POST['descPortal'];
 
 		//consulta
-		$sql = "INSERT INTO portais (nome, url, descricao) 
+		$sql = "INSERT INTO portais_teste (nome, url, descricao) 
 				VALUES (".$this->db->escape($this->nomePortal).", ".$this->db->escape($this->url).", ".$this->db->escape($this->descPortal).")";
 
 		if (isset($_POST['botaoEnviar'])) 
