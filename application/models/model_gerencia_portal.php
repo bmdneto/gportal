@@ -44,8 +44,20 @@ class Model_Gerencia_portal extends CI_Model
 
 				//lib pra criacao de arquivos
 				$this->load->helper('file');
+<<<<<<< HEAD
 				$data = 'Some file data';
 				//write_file('./' . $this->url . '/index.php', $data);
+=======
+				$data =	'<html>
+							<head><title>'.$this->nomePortal.'</title></head>
+							<body>
+								'.$this->descPortal.'
+							</body>
+						 </html>
+						';
+				//cria o arquivo index do portal
+				//write_file('./' . $this->url, $data);
+>>>>>>> b341d55752a27286bbb601ba31eb6936879dc19f
 			}
 			else 
 			{
@@ -59,9 +71,16 @@ class Model_Gerencia_portal extends CI_Model
 
 	function removePortal($var, $url)
 	{
-		$this->db->where('id_portal', $var);
-		$this->db->delete('portais'); 
+		//se houver arquivos dentro, nao deleta
 		rmdir($url);
+		$this->db->where('id_portal', $var);
+		$this->db->delete('portais_teste');	
+		
+		/*
+		echo "<script type='text/javascript'> 
+		alert('Existem arquivos no diretorio!!'); 
+		</script>"; 
+		*/
 	}
 
 }
