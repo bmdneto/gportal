@@ -31,6 +31,7 @@ class Model_Gerencia_portal extends CI_Model
 		$this->menu			= '';
 		$this->descPortal 	= $_POST['descPortal'];
 
+<<<<<<< HEAD
 
 		// inserção
 		$sql = "INSERT INTO portais_teste (nome, url, descricao, template, admin) 
@@ -40,6 +41,11 @@ class Model_Gerencia_portal extends CI_Model
 						".$this->db->escape($this->template).",
 						".$this->db->escape($this->admin).")";
 
+=======
+		//consulta
+		$sql = "INSERT INTO portais (nome, url, descricao) 
+				VALUES (".$this->db->escape($this->nomePortal).", ".$this->db->escape($this->url).", ".$this->db->escape($this->descPortal).")";
+>>>>>>> cb825f24055c08233dda816f0ae7cdcff0520741
 
 		if (isset($_POST['botaoEnviar'])) 
 		{
@@ -51,6 +57,10 @@ class Model_Gerencia_portal extends CI_Model
 
 				//lib pra criacao de arquivos
 				$this->load->helper('file');
+<<<<<<< HEAD
+				$data = 'Some file data';
+				//write_file('./' . $this->url . '/index.php', $data);
+=======
 				$data =	'<html>
 							<head><title>'.$this->nomePortal.'</title></head>
 							<body>
@@ -59,7 +69,12 @@ class Model_Gerencia_portal extends CI_Model
 						 </html>
 						';
 				//cria o arquivo index do portal
+<<<<<<< HEAD
 				//write_file('./' . $this->url . '/'. 'index.php', $data);
+=======
+				//write_file('./' . $this->url, $data);
+>>>>>>> b341d55752a27286bbb601ba31eb6936879dc19f
+>>>>>>> cb825f24055c08233dda816f0ae7cdcff0520741
 			}
 			else 
 			{
