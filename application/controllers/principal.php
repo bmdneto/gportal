@@ -17,10 +17,6 @@
 		{
 			if($this->session->userdata('logged_in'))
 		    {	
-		      	// lista portais
-				// alterar: esta consulta devera listar somente portais criados pelo usuario corrente
-				// where admin == usuario_corrente
-
 		      	$this->load->model('Idioma');
 				$query = $this->Idioma->get_results();
 				if(isset($language))
@@ -31,10 +27,13 @@
 		      	
 		      	$session_data = $this->session->userdata('logged_in');
 		      	$data = array(
-				'rows' => $query->result(),
-				'title' => $this->lang->line('title'),
-				'username' => $session_data['username'],
-				'query' => $this->db->query('SELECT id_portal, nome, url, descricao FROM portais_teste')
+					'rows' => $query->result(),
+					'title' => $this->lang->line('title'),
+					'username' => $session_data['username'],
+					'query' => $this->db->query('SELECT id_portal, nome, url, descricao, admin 
+												 FROM portais_teste
+												 /*WHERE admin = $username*/
+											    ')
 				);
 
 				$this->load->view('header-view.php', $data);

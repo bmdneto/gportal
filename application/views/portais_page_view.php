@@ -34,14 +34,15 @@
       <!-- Laço que exibe os portais do controller: principal.php 
            Alterar: exibir apenas portais que o usuario corrente é adm -->
       <?php foreach ($query->result() as $row): ?>
+
+        <?php if ($row->admin == $username) { ?>
         <tr id="$row->id_portal">
           <td><?php echo $row->id_portal; ?></td>
           <td><?php echo $row->nome; ?></td>
-          <td><a href="<?php echo $row->url ?>"><?php echo $row->url; ?></a></td>
-          <td>bmdneto</td>
+          <td><a href="<?php echo $row->url; ?>"><?php echo $row->url; ?></a></td>
+          <td><?php echo $username; ?></td>
           <td><?php echo $row->descricao; ?></td>
-          
-
+      
           <td>
             <!-- botao editar -->
             <button class="btn btn-default" type="submit" name="botaoEditar" value="">
@@ -86,10 +87,10 @@
 
             </form>
             <!-- fim botao remover -->
-
           </td>
 
         </tr>
+        <?php } ?>
       <?php endforeach; ?>
         
       </tbody>
@@ -106,6 +107,9 @@
   <hr/>
 
     <form class="form-horizontal" role="form" action="index.php/Gerencia_portal" method="POST">
+
+      <!-- Envia o usuário que está na sessão para o model_gerencia_portal -->
+      <input type="hidden" id="username" name="username" value="<?php echo $username; ?>">
 
       <!-- nome -->
       <div class="form-group">
