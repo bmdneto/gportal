@@ -31,9 +31,7 @@
 					'title' => $this->lang->line('title'),
 					'username' => $session_data['username'],
 					'query' => $this->db->query('SELECT id_portal, nome, url, descricao, admin 
-												 FROM portais_teste
-												 /*WHERE admin = $username*/
-											    ')
+												 FROM portais_teste')
 				);
 
 				$this->load->view('header-view.php', $data);
