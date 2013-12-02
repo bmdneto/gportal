@@ -276,8 +276,32 @@
 
 
 
-  <div class="tab-pane" id="paginas">paginas</div>
-  <div class="tab-pane" id="templates">templates</div>
+  <div class="tab-pane" id="paginas">
+
+  </div>
+
+  <div class="tab-pane" id="templates">
+    <h4>Componentes do template</h4>
+      <hr>
+      <form action="">
+        <input type="checkbox"> Fotografia <br><br>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Escolha um arquivo</h3>
+          </div>
+          <div class="panel-body">
+            <input type="file">
+          </div>
+        </div>
+
+        <input type="checkbox"> Contatos <br><br>
+        <textarea name="" id="" cols="125" rows="10"></textarea><br><br>  
+        <input type="checkbox"> Blog <br><br>
+        <label for="texto-blog">Nova mensagem: </label>
+        <textarea name="" id="texto-blog" cols="125" rows="10"></textarea><br><br>
+        <button class="btn btn-default">Salvar</button><br><br>  
+      </form>
+  </div>
   <div class="tab-pane" id="configuracoes">config</div>
 </div>
 
