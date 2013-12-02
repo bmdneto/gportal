@@ -281,6 +281,8 @@
   <!-- FIM edição de portais -->
 
 
+<<<<<<< HEAD
+
 
   <div class="tab-pane" id="paginas">
 
@@ -308,9 +310,10 @@
         <button class="btn btn-default">Salvar</button><br><br>  
       </form>
   </div>
-
+=======
   <div class="tab-pane" id="paginas">paginas</div>
   <div class="tab-pane" id="templates">templates</div>
+>>>>>>> 90c28049ac24150175217291a31bd3652412fbbe
   <div class="tab-pane" id="configuracoes">config</div>
 </div>
 
