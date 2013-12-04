@@ -30,7 +30,7 @@
 					'rows' => $query->result(),
 					'title' => $this->lang->line('title'),
 					'username' => $session_data['username'],
-					'query' => $this->db->query('SELECT id_portal, nome, url, descricao, admin 
+					'query' => $this->db->query('SELECT id_portal, nome, url, descricao, admin
 												 FROM portais_teste')
 				);
 

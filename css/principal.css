@@ -1,6 +1,6 @@
 *{ 
 	margin:0; 
-	padding:0; 
+	padding:0;
 }
 
 #bar{
@@ -46,11 +46,13 @@
 	color: #aaa;
 	padding-right: 0!important;
 }
+
 #content-box{
 	overflow:hidden;
 	padding-left: 40px;
 	text-align: justify;
 }
+
 .conteudo{
 	float: left;
 	overflow:hidden;
@@ -85,7 +87,7 @@
 
 #menu{
 	background-color: #eee;
-	height: 700px;
+	height: 1500px;
 	padding: 0 !important;
 	margin: 0 !important;
 	width: 214px;

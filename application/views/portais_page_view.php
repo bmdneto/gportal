@@ -287,6 +287,7 @@
   </div>
 
   <div class="tab-pane" id="templates">
+    <script src="ckeditor/ckeditor.js"></script>
     <h4>Componentes do template</h4>
       <hr>
       <form action="">
@@ -299,12 +300,34 @@
             <input type="file">
           </div>
         </div>
-
+        <hr>
         <input type="checkbox"> Contatos <br><br>
-        <textarea name="" id="" cols="125" rows="10"></textarea><br><br>  
+        <label for="texto-contatos">Editar contatos: </label>
+        <form>
+            <textarea id="editor1" name="editor1" rows="10" cols="80">
+                Contatos.
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+        </form><br>
+                <hr>
+    
         <input type="checkbox"> Blog <br><br>
         <label for="texto-blog">Nova mensagem: </label>
-        <textarea name="" id="texto-blog" cols="125" rows="10"></textarea><br><br>
+        <form>
+            <textarea id="editor2" name="editor2" rows="10" cols="80">
+                Conteúdo da postagem
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor2' );
+            </script>
+        </form>
+        <br><br>        
         <button class="btn btn-default">Salvar</button><br><br>  
       </form>
   </div>
