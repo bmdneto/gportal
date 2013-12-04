@@ -95,7 +95,7 @@
   <h4>Formulário para criação de portais:</h4>
   <hr/>
 
-    <form class="form-horizontal" role="form" action="index.php/Gerencia_portal" method="POST">
+    <form class="form-horizontal" role="form" action="Gerencia_portal" method="POST">
 
       <!-- Envia o usuário que está na sessão para o model_gerencia_portal -->
       <input type="hidden" id="username" name="username" value="<?php echo $username; ?>">

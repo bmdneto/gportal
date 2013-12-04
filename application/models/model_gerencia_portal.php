@@ -24,7 +24,7 @@ class Model_Gerencia_portal extends CI_Model
 
 		// se o diretório for default, acrescenta apenas o nome do portal, senão, concatena o novo diretorio
 		if ($_POST['diretorioPortal'] == 'default') {
-			$this->url	= 'sites/' . $_POST['nomePortal'] . '/';
+			$this->url	= 'sites/' . $_POST['nomePortal'];
 		}
 		else {
 			$this->url = $_POST['diretorioPortal'] . $_POST['nomePortal'] . '/'; 
@@ -55,8 +55,7 @@ class Model_Gerencia_portal extends CI_Model
 			{
 				$this->db->query($sql);
 				mkdir($this->url, 0777);
-
-				/*
+				
 				//lib pra criacao de arquivos
 				$this->load->helper('file');
 
@@ -67,9 +66,11 @@ class Model_Gerencia_portal extends CI_Model
 							</body>
 						 </html>
 						';
+
 				//cria o arquivo index do portal
-				write_file('./' . $this->url . '/'. 'index.php', $data);
-				*/
+				write_file('./' . $this->url .'/'. 'index.php', $data, 'r+');
+				//write_file('./path/to/file.php', $data, 'r+');
+				echo $this->url;
 			}
 			else 
 			{
