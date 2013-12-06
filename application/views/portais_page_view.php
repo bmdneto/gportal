@@ -50,17 +50,6 @@
               </button>
             </form>
 
-            <!--
-            <a data-toggle="tab" href="#editaPortal">
-              <form class="form-horizontal" role="form" action="Gerencia_portal/Edita_portal" method="POST">
-                <button class="btn btn-primary" type="submit" name="botaoEditar" value="<?php echo $row->id_portal; ?>">
-                  <span class="glyphicon glyphicon-edit"></span>
-                  <?php echo $row->id_portal; ?>
-                </button>
-              </form>
-            </a>
-            -->
-
           </td>
 
           <td>
@@ -135,11 +124,12 @@
       <div class="form-group">
         <label for="tipoPortal" class="col-lg-2 control-label">Tipo de Portal</label>
         <div class="col-lg-10">
-          <select class="form-control">
-            <option>Professor</option>
-            <option>Projeto</option>
-            <option>Página pessoal</option>
-            <option>Grupo de pesquisa</option>
+          <select class="form-control" name="tipoPortal">
+            <option value="professor">Professor</option>
+            <option value="projeto">Projeto</option>
+            <option value="laboratorio">Laboratório</option>
+            <option value="grupo">Grupo de pesquisa</option>
+            <option value="aluno">Aluno</option>
           </select>
         </div>
       </div>
@@ -203,7 +193,15 @@
   <h4>Formulário para edição do portais</h4>
   <hr/>
 
+    <?php
+      if (isset($_POST['edit'])) {
+        echo $row->id_portal;
+        echo 'kkkkkkkkkk';
+      }
+    ?>
+
     <form class="form-horizontal" role="form" action="Gerencia_portal/Edita_portal" method="POST">
+
 
 <!--
           <?php echo $row->id_portal; ?>
@@ -283,7 +281,7 @@
 
 
   <div class="tab-pane" id="paginas">
-
+    paginas
   </div>
 
   <div class="tab-pane" id="templates">

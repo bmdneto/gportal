@@ -25,14 +25,15 @@ class Model_Gerencia_portal extends CI_Model
 		// se o diretório for default, acrescenta apenas o nome do portal, senão, concatena o novo diretorio
 		if ($_POST['diretorioPortal'] == 'default') {
 			$this->url	= 'sites/' . $_POST['nomePortal'];
+			$this->portal_pai = 'sites/';
 		}
 		else {
-			$this->url = $_POST['diretorioPortal'] . $_POST['nomePortal'] . '/'; 
+			$this->url = $_POST['diretorioPortal'] .'/'. $_POST['nomePortal'] . '/'; 
+			$this->portal_pai = $_POST['diretorioPortal'] .'/';
 		}
 
 		$this->nomePortal 	= $_POST['nomePortal'];
 		$this->admin		= $_POST['username'];
-		$this->portal_pai	= '';
 		$this->template		= 1;
 		$this->grupo_edita	= '';
 		$this->menu			= '';
@@ -40,10 +41,11 @@ class Model_Gerencia_portal extends CI_Model
 
 
 		// inserção
-		$sql = "INSERT INTO portais_teste (nome, url, descricao, template, admin) 
+		$sql = "INSERT INTO portais_teste (nome, url, descricao, portal_pai, template, admin) 
 				VALUES (".$this->db->escape($this->nomePortal).", 
 						".$this->db->escape($this->url).", 
 						".$this->db->escape($this->descPortal).",
+						".$this->db->escape($this->portal_pai).",
 						".$this->db->escape($this->template).",
 						".$this->db->escape($this->admin).")";
 
@@ -55,52 +57,77 @@ class Model_Gerencia_portal extends CI_Model
 			{
 				$this->db->query($sql);
 				mkdir($this->url, 0777);
-				
-				//lib pra criacao de arquivos
-				$this->load->helper('file');
-
-				$data =	'<html>
-							<head><title>'.$this->nomePortal.'</title></head>
-							<body>
-								'.$this->descPortal.'
-							</body>
-						 </html>
-						';
-
-				//cria o arquivo index do portal
-				write_file('./' . $this->url .'/'. 'index.php', $data, 'r+');
-				//write_file('./path/to/file.php', $data, 'r+');
-				echo $this->url;
 			}
-			else 
-			{
+			else {
 				echo "<script>
 					alert(\"URL existente. $this->url \");
 				</script>";
 			}
+
 		}
 
-		$dadosPortal = array(
-							'nomePortal'	=> $this->nomePortal,
-							'adminPortal' 	=> $this->admin,
-							'portal_pai' 	=> $this->portal_pai,
-							'template'		=> $this->template,
-							'grupo_edita'	=> $this->grupo_edita,
-							'menu'			=> $this->menu,
-							'descPortal'	=> $this->descPortal
-					   );
 
-		return $dadosPortal;
+		function copyr($source, $dest)
+		{
+		   // COPIA UM ARQUIVO
+		   if (is_file($source)) {
+		      return copy($source, $dest);
+		   }
+		 
+		   // CRIA O DIRETÓRIO DE DESTINO
+		   if (!is_dir($dest)) {
+		      mkdir($dest);
+		      //echo "DIRET&Oacute;RIO $dest CRIADO<br />";
+		   }
+		 
+		   // FAZ LOOP DENTRO DA PASTA
+		   $dir = dir($source);
+		   while (false !== $entry = $dir->read()) {
+		      // PULA "." e ".."
+		      if ($entry == '.' || $entry == '..') {
+		         continue;
+		      }
+		 
+		      // COPIA TUDO DENTRO DOS DIRETÓRIOS
+		      if ($dest !== "$source/$entry") {
+		         copyr("$source/$entry", "$dest/$entry");
+		         //echo "COPIANDO $entry de $source para $dest <br />";
+		      }
+		   }
+		 
+		   $dir->close();
+		   return true;
+		}
+
+		if ($_POST['tipoPortal'] == 'professor') {
+			$source = 'template/professor';	
+		}
+		
+		elseif ($_POST['tipoPortal'] == 'projeto') {
+
+		}
+
+		$dest = $this->url;
+		copyr($source, $dest);
+		
 	}
+
 
 	function removePortal($var, $url)
 	{
-		rmdir($url);
-		$this->db->where('id_portal', $var);
-		$this->db->delete('portais_teste');	
+		// se não houver arquivos dentro do diretório
+		$dir = $url;
+		$scan = scandir($dir);
+
+		if(count($scan) > 2) {
+			echo "<script>alert(\"Existem arquivos no diretorio $url. \");</script>";
+		}
+		else {
+			rmdir($url);
+			$this->db->where('id_portal', $var);
+			$this->db->delete('portais_teste');
+		}
 	}
-
-
 
 
 	function editarPortal($var)	{
@@ -120,7 +147,7 @@ class Model_Gerencia_portal extends CI_Model
 			);
 		}
 		
-		return $dadosPortal;
+		//return $dadosPortal;
 	}
 }
 
