@@ -3,7 +3,7 @@
 	<ul class="nav nav-tabs" id="myTab">
     <li class="active"><a data-toggle="tab" href="#listaPortal">Lista de Portais</a></li>
     <li><a data-toggle="tab" href="#criarPortal">Criar Portais</a></li>
-    <!--<li><a data-toggle="tab" href="#editaPortal">Edição de Portais</a></li>-->
+    <li><a data-toggle="tab" href="#editaPortal">Edição de Portais</a></li>
     <li><a data-toggle="tab" href="#paginas">Gerenciar páginas</a></li>
     <li><a data-toggle="tab" href="#templates">Gerenciar templates</a></li>
     <li><a data-toggle="tab" href="#configuracoes">Configurações</a></li>
@@ -43,6 +43,7 @@
           <td><?php echo $row->descricao; ?></td>
 
           <td>
+
             <!-- botao editar -->
             <form class="form-horizontal" role="form" action="Gerencia_portal/Edita_portal" method="POST">
               <button class="btn btn-primary" type="submit" name="edit" value="<?php echo $row->id_portal; ?>">
@@ -60,12 +61,12 @@
                 <input type="hidden" id="Url" name="Url" value="<?php echo $row->url; ?>">
                 <span class="glyphicon glyphicon-trash"></span>
               </button>
-              
+
             </form>
-          </td>
-            
             <!-- fim botao remover -->
           </td>
+            
+            
 
         </tr>
         <?php } ?>
@@ -193,47 +194,67 @@
   <h4>Formulário para edição do portais</h4>
   <hr/>
 
-    <?php
-      if (isset($_POST['edit'])) {
-        echo $row->id_portal;
-        echo 'kkkkkkkkkk';
-      }
-    ?>
-
     <form class="form-horizontal" role="form" action="Gerencia_portal/Edita_portal" method="POST">
 
+    <!-- Laço que exibe o nome de todos os portais em que o usuário é administrador -->
+    <div class="form-group">
+      <label for="descricaoPortal" class="col-lg-2 control-label">Portal a ser editado</label>
+      <div class="col-lg-10">
 
-<!--
-          <?php echo $row->id_portal; ?>
-          <?php echo $row->nome; ?>
-          <?php echo $row->url; ?>
-          <?php echo $username; ?>
-          <?php echo $row->descricao; ?>
--->
-      
+        <select class="form-control" name="editaPortal">
+        
+        <?php foreach ($query->result() as $row): ?>
+          <?php if ($row->admin == $username) { ?>
+
+            <option value="<?php echo $row->id_portal; ?>"><?php echo $row->nome; ?></option>
+              
+          <?php } ?>
+        <?php endforeach; ?>
+
+        </select>
+
+      </div>
+    </div>
+    <hr>
+
 
       <!-- edita nome -->
       <div class="form-group">
-        <label for="EditaNomePortal" class="col-lg-2 control-label">Novo nome do portal</label>
+        <label for="EditaNomePortal" class="col-lg-2 control-label">Alterar o nome do portal</label>
         <div class="col-lg-10">
           <input type="text" class="form-control" name="editaNomePortal" placeholder="Novo nome do portal">
         </div>
       </div>
 
       <!-- muda url -->
+      <!-- Seleciona o diretório em que o portal será criado -->
       <div class="form-group">
-        <label for="exampleInputFile" class="col-lg-2 control-label">Nova diretório</label>
+        <label for="diretorio" class="col-lg-2 control-label">Alterar o diretório</label>
         <div class="col-lg-10">
-          <input type="file" id="exampleInputFile">
-          <p class="help-block">Escolha o novo diretório para seu portal.</p>
+
+          <select class="form-control" name="editaDiretorioPortal">
+            <option value="default" selected="selected">Não alterar</option>
+
+            <!-- seleciona todos os portals em que o usuário é admin -->
+            <?php foreach ($query->result() as $row): ?>
+              <?php if ($row->admin == $username) { ?>
+
+                <option value="<?php echo $row->url; ?>"><?php echo $row->url; ?></option>
+              
+              <?php } ?>
+            <?php endforeach; ?>
+
+          </select>
         </div>
       </div>
+
+
 
       <!-- tipo de portal 
       define o template padrão
       -->
       <div class="form-group">
-        <label for="tipoPortal" class="col-lg-2 control-label">Novo tipo de portal</label>
+        <label for="tipoPortal" class="col-lg-2 control-label">Alterar o tipo de portal</label>
         <div class="col-lg-10">
           <select class="form-control">
             <option>Professor</option>
@@ -330,8 +351,8 @@
       </form>
   </div>
 
-  <div class="tab-pane" id="paginas">paginas</div>
+
   <div class="tab-pane" id="templates">templates</div>
   <div class="tab-pane" id="configuracoes">config</div>
 </div>
-
+</div>

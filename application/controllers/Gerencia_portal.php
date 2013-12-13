@@ -31,10 +31,16 @@
 
 		public function Edita_portal()
 		{
-			$this->load->model('model_gerencia_portal','',TRUE);
-			echo $_POST['edit'];
+			//redirect('editaPortal', 'refresh');
+			
+			if (isset($_POST['botaoEnviarEdicao'])) {
 
-			$this->model_gerencia_portal->editarPortal($_POST['edit']);
+				$this->load->model('model_gerencia_portal','',TRUE);
+				$this->model_gerencia_portal->editarPortal($_POST['editaPortal']);
+
+			}
+			$this->load->helper('url');
+			//redirect('principal', 'refresh');
 		}
 
 	}
