@@ -203,13 +203,13 @@
 
         <select class="form-control" name="editaPortal">
         
-        <?php foreach ($query->result() as $row): ?>
-          <?php if ($row->admin == $username) { ?>
+          <?php foreach ($query->result() as $row): ?>
+            <?php if ($row->admin == $username) { ?>
 
-            <option value="<?php echo $row->id_portal; ?>"><?php echo $row->nome; ?></option>
-              
-          <?php } ?>
-        <?php endforeach; ?>
+              <option value="<?php echo $row->id_portal; ?>"><?php echo $row->nome; ?></option>
+                
+            <?php } ?>
+          <?php endforeach; ?>
 
         </select>
 
@@ -226,8 +226,7 @@
         </div>
       </div>
 
-      <!-- muda url -->
-      <!-- Seleciona o diretório em que o portal será criado -->
+      <!-- muda url
       <div class="form-group">
         <label for="diretorio" class="col-lg-2 control-label">Alterar o diretório</label>
         <div class="col-lg-10">
@@ -235,7 +234,6 @@
           <select class="form-control" name="editaDiretorioPortal">
             <option value="default" selected="selected">Não alterar</option>
 
-            <!-- seleciona todos os portals em que o usuário é admin -->
             <?php foreach ($query->result() as $row): ?>
               <?php if ($row->admin == $username) { ?>
 
@@ -247,6 +245,7 @@
           </select>
         </div>
       </div>
+      -->
 
 
 
@@ -267,27 +266,34 @@
 
       <!-- edita descricao -->
       <div class="form-group">
-        <label for="editaDescricaoPortal" class="col-lg-2 control-label">Nova descrição</label>
+        <label for="editaDescricaoPortal" class="col-lg-2 control-label">Alterar a descrição</label>
         <div class="col-lg-10">
           <textarea class="form-control" rows="3" name="editaDescPortal" placeholder="Descrição do portal"></textarea>
         </div>
       </div>
 
       <!-- edita template -->
+      <br>
       <div class="form-group">
-        <label for="editaTemplate" class="col-lg-2 control-label">Novo template</label>
+        <label for="editaTemplate" class="col-lg-2 control-label">Alterar o template (clique para vizualizar)</label>
         <div class="col-lg-10">
-          <div class="row">
-            <div class="col-sm-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img src="img/user-icon.png" alt="...">
-              </a>
-            </div>
-            ...
+          <div class="column">
+          
+          <!-- if tipo de portal == professor -->
+            <input type="radio" value="1" name="template" checked>
+              <a href="template/professor" target="_blank"><img src="img/1.png" width="200" height="300"></a>&nbsp
+
+            <input type="radio" value="2" name="template">
+              <a href="template/professor" target="_blank"><img src="img/1.png" width="200" height="300"></a>&nbsp
+
+            <input type="radio" value="3" name="template">
+              <a href="template/professor" target="_blank"><img src="img/1.png" width="200" height="300"></a>
+
           </div>
         </div>
+
       </div>
-      
+
       <hr/>
 
     

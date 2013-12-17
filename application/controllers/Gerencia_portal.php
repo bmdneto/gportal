@@ -31,7 +31,6 @@
 
 		public function Edita_portal()
 		{
-			//redirect('editaPortal', 'refresh');
 			
 			if (isset($_POST['botaoEnviarEdicao'])) {
 

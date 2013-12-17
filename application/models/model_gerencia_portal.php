@@ -148,8 +148,8 @@ class Model_Gerencia_portal extends CI_Model
 
 	function editarPortal($var)	{
 
-		echo $var;
-
+		/*
+		// edição de diretório
 		if ($_POST['editaDiretorioPortal'] == 'default') {
 			//$this->url	= 'sites/' . $_POST['editaNomePortal'];
 			//$this->portal_pai = 'sites/';
@@ -158,10 +158,9 @@ class Model_Gerencia_portal extends CI_Model
 			$this->url = $_POST['editaDiretorioPortal'] .'/'. $_POST['editaNomePortal'];
 			$this->portal_pai = $_POST['editaDiretorioPortal'];
 		}
-
+		*/
 
 		$this->nomePortal 	= $_POST['editaNomePortal'];
-
 		$this->template		= 1;
 		$this->grupo_edita	= '';
 		$this->menu			= '';
@@ -170,17 +169,14 @@ class Model_Gerencia_portal extends CI_Model
 		
 		//url = ".$this->db->escape($this->url).",
 		$sql = "UPDATE portais_teste SET nome = ".$this->db->escape($this->nomePortal).",
-										 
 										 portal_pai = ".$this->db->escape($this->portal_pai).",
 										 descricao = ".$this->db->escape($this->descPortal)."
 				WHERE id_portal = ".$var." ";
 
 
-		$query = $this->db->query('SELECT url FROM portais_teste');
+		//$query = $this->db->query('SELECT url FROM portais_teste');
 		//rename($query->url, $_POST['editaDiretorioPortal']);
-
 		//echo $query->url();
-
 		// alterar o nome do diretório pra nova url
 
 		$this->db->query($sql);
