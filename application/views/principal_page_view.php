@@ -1,11 +1,7 @@
 <div class="tab-conteudo" id="tabs1">
-	<h3>Gerenciador de portais GPortais</h3>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quibusdam pariatur perspiciatis ea totam 
-	placeat consequatur dolorum corrupti provident non velit numquam excepturi consectetur nemo magni impedit 
-	quas doloremque porro nisi distinctio! Asperiores consectetur necessitatibus omnis perspiciatis vero alias 
-	sunt adipisci ut autem voluptate. Atque, ea odit accusantium et rem obcaecati provident reprehenderit 
-	necessitatibus deleniti perspiciatis ab magni adipisci molestias unde quod. Eum, blanditiis iste delectus 
-	explicabo id dolor iure! Consectetur, odio, optio ducimus reiciendis quibusdam illum voluptate nihil 
-	blanditiis possimus sed dolore libero repellat ad molestias illo inventore eaque unde iste? Nam, et, 
-	repellat molestiae animi est dolorem quibusdam.
+	<h3>Gerenciador de portais GPortal</h3><hr>
+	<p>O sistema GPortal é um gerenciador de portais com finalidade de fazer a gestão de portais com conteúdo em comum e organização hierárquica, este, será utilizado em um caso particular no domínio acadêmico.
+Este gerenciador oferece uma interface amigável a usuários e administradores para a geração e gerenciamento de conteúdo de forma rápida, segura e intuitiva.</p>
+<p>Além de oferecer vários mecanismos de associatividade entre conteúdo e usuários, permitindo que departamentos, coordenações, laboratórios, professores e alunos administrem, através de um sistema integrado, sites padronizados por meio de um sistema de fácil utilização.
+Atualmente sites de departamentos, coordenações, laboratórios, professores e alunos são gerenciados e administrados de forma individual, forma esta que impõe diversas dificuldades e restrições aos seus proprietários, seja por não ter uma ferramenta facilitadora de desenvolvimento, por estar sujeito a questões burocráticas, como solicitação de criação e autorização para acesso a domínio próprio ou pelas restrições tecnológicas oferecidas pelo sistema acadêmico.</p>
 </div>
