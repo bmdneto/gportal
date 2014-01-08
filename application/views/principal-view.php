@@ -31,6 +31,9 @@
 					<span id="tabs2span" class="glyphicon glyphicon-cog"></span><a href="#" rel="tabs2">Gerenciar portais</a>
 				</li>
 				<li class="tab">
+					<span id="tabs5span" class="glyphicon glyphicon-wrench"></span><a href="#" rel="tabs5">Gerenciar páginas</a>
+				</li>
+				<li class="tab">
 					<span id="tabs3span" class="glyphicon glyphicon-flag"></span><a href="#" rel="tabs3">Idioma do sistema</a>
 				</li>
 				<li class="tab">

@@ -159,6 +159,7 @@ class Model_Gerencia_portal extends CI_Model
 			$this->portal_pai = $_POST['editaDiretorioPortal'];
 		}
 		*/
+		//echo $url;
 
 		$this->nomePortal 	= $_POST['editaNomePortal'];
 		$this->template		= 1;
@@ -166,7 +167,7 @@ class Model_Gerencia_portal extends CI_Model
 		$this->menu			= '';
 		$this->descPortal 	= $_POST['editaDescPortal'];
 
-		
+
 		//url = ".$this->db->escape($this->url).",
 		$sql = "UPDATE portais_teste SET nome = ".$this->db->escape($this->nomePortal).",
 										 portal_pai = ".$this->db->escape($this->portal_pai).",

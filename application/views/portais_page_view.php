@@ -210,7 +210,7 @@
                 
             <?php } ?>
           <?php endforeach; ?>
-
+          
         </select>
 
       </div>
@@ -278,7 +278,7 @@
         <label for="editaTemplate" class="col-lg-2 control-label">Alterar o template (clique para vizualizar)</label>
         <div class="col-lg-10">
           <div class="column">
-          
+
           <!-- if tipo de portal == professor -->
             <input type="radio" value="1" name="template" checked>
               <a href="template/professor" target="_blank"><img src="img/1.png" width="200" height="300"></a>&nbsp
@@ -295,7 +295,6 @@
       </div>
 
       <hr/>
-
     
       <button type="submit" name="botaoEnviarEdicao" class="btn btn-primary">Editar Portal</button>
       
