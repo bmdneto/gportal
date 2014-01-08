@@ -88,13 +88,13 @@
     <form class="form-horizontal" role="form" action="Gerencia_portal" method="POST">
 
       <!-- Envia o usuário que está na sessão para o model_gerencia_portal -->
-      <input type="hidden" id="username" name="username" value="<?php echo $username; ?>">
+      <input type="hidden" id="username" name="username" value="<?php echo $username; ?>" />
 
       <!-- nome -->
       <div class="form-group">
         <label for="nomePortal" class="col-lg-2 control-label">Nome do Portal</label>
         <div class="col-lg-10">
-          <input type="text" class="form-control" name="nomePortal" placeholder="Nome do portal">
+          <input type="text" class="form-control" name="nomePortal" placeholder="Nome do portal" />
         </div>
       </div>
 
@@ -196,6 +196,11 @@
 
     <form class="form-horizontal" role="form" action="Gerencia_portal/Edita_portal" method="POST">
 
+    <?php echo $row->id_portal; ?>
+          <?php echo $row->nome; ?>
+          <?php echo $row->url; ?>
+          <?php echo $username; ?>
+          <?php echo $row->descricao; ?>
     <!-- Laço que exibe o nome de todos os portais em que o usuário é administrador -->
     <div class="form-group">
       <label for="descricaoPortal" class="col-lg-2 control-label">Portal a ser editado</label>
@@ -217,6 +222,7 @@
     </div>
     <hr>
 
+>>>>>>> c59e2b81f9c14721bc8654a21608d414c3c5e8bb
 
       <!-- edita nome -->
       <div class="form-group">
@@ -307,41 +313,96 @@
 
 
   <div class="tab-pane" id="paginas">
-    paginas
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome do Portal</th>
+          <th>URL</th>
+          <th>Administradores</th>
+          <th>Descrição</th>
+          <th>Exibir</th>
+        </tr>
+      </thead>
+
+      <!-- Laço que exibe os portais do controller: principal.php -->
+
+      <?php foreach ($query->result() as $row): ?>
+        <?php if ($row->admin == $username) { ?>
+        <tr>
+          <td><?php echo $row->id_portal; ?></td>
+          <td><?php echo $row->nome; ?></td>
+          <td><a href="<?php echo $row->url; ?>"><?php echo $row->url; ?></a></td>
+          <td><?php echo $username; ?></td>
+          <td><?php echo $row->descricao; ?></td>
+
+          <td>
+            <!-- botao editar -->
+          <button class="btn btn-default" id="btn-show">Exibir</button>
+
+          </td>
+
+        </tr>
+        <?php } ?>
+      <?php endforeach; ?>
+        
+      </tbody>
+    </table>
+    <div class="panel panel-default" id="show">
+      <div class="panel-heading">
+        <h3 class="panel-title">Páginas</h3>
+      </div>
+      <div class="panel-body">
+      <?php
+        foreach ($paginas as $rows) { 
+          echo $rows->nome;
+        }
+      ?>
+      </div>
+      </div>
   </div>
 
   <div class="tab-pane" id="templates">
     <script src="ckeditor/ckeditor.js"></script>
     <h4>Componentes do template</h4>
       <hr>
-      <form action="">
         <input type="checkbox"> Fotografia <br><br>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">Escolha um arquivo</h3>
           </div>
+          
           <div class="panel-body">
-            <input type="file">
+
+          <?php echo form_open_multipart('upload/do_upload');?>
+
+          <input type="file" name="userfile" size="20" />
+
+          <br /><br />
+
+          <button type="submit"  class="btn btn-default" >Upload</button>
+
+          </form>
           </div>
+
         </div>
+        
         <hr>
         <input type="checkbox"> Contatos <br><br>
         <label for="texto-contatos">Editar contatos: </label>
-        <form>
             <textarea id="editor1" name="editor1" rows="10" cols="80">
-                Contatos.
+            Contatos.
             </textarea>
             <script>
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
                 CKEDITOR.replace( 'editor1' );
             </script>
-        </form><br>
+        <br>
                 <hr>
     
         <input type="checkbox"> Blog <br><br>
         <label for="texto-blog">Nova mensagem: </label>
-        <form>
             <textarea id="editor2" name="editor2" rows="10" cols="80">
                 Conteúdo da postagem
             </textarea>
@@ -350,10 +411,8 @@
                 // instance, using default configuration.
                 CKEDITOR.replace( 'editor2' );
             </script>
-        </form>
         <br><br>        
-        <button class="btn btn-default">Salvar</button><br><br>  
-      </form>
+                  <button type="submit"  class="btn btn-default" >Salvar</button><br><br>
   </div>
 
 

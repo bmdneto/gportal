@@ -20,3 +20,4 @@
     <script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
     <!--Abas do menu lateral-->
     <script src="js/tabs.js"></script>
+    <script src="js/page.js"></script>

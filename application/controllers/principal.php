@@ -18,7 +18,9 @@
 			if($this->session->userdata('logged_in'))
 		    {	
 		      	$this->load->model('Idioma');
+		      	$this->load->model('Model_Paginas');
 				$query = $this->Idioma->get_results();
+				$consultaPaginas = $this->Model_Paginas->consultaPaginas(16);
 				if(isset($language))
 				{
 					$language = $_POST['optionsRadios'];
@@ -31,7 +33,8 @@
 					'title' => $this->lang->line('title'),
 					'username' => $session_data['username'],
 					'query' => $this->db->query('SELECT id_portal, nome, url, descricao, admin
-												 FROM portais_teste')
+												 FROM portais_teste'),
+					'paginas' => $consultaPaginas->result()
 				);
 
 				$this->load->view('header-view.php', $data);
