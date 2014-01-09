@@ -312,55 +312,7 @@
 
 
 
-  <div class="tab-pane" id="paginas">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nome do Portal</th>
-          <th>URL</th>
-          <th>Administradores</th>
-          <th>Descrição</th>
-          <th>Exibir</th>
-        </tr>
-      </thead>
-
-      <!-- Laço que exibe os portais do controller: principal.php -->
-
-      <?php foreach ($query->result() as $row): ?>
-        <?php if ($row->admin == $username) { ?>
-        <tr>
-          <td><?php echo $row->id_portal; ?></td>
-          <td><?php echo $row->nome; ?></td>
-          <td><a href="<?php echo $row->url; ?>"><?php echo $row->url; ?></a></td>
-          <td><?php echo $username; ?></td>
-          <td><?php echo $row->descricao; ?></td>
-
-          <td>
-            <!-- botao editar -->
-          <button class="btn btn-default" id="btn-show">Exibir</button>
-
-          </td>
-
-        </tr>
-        <?php } ?>
-      <?php endforeach; ?>
-        
-      </tbody>
-    </table>
-    <div class="panel panel-default" id="show">
-      <div class="panel-heading">
-        <h3 class="panel-title">Páginas</h3>
-      </div>
-      <div class="panel-body">
-      <?php
-        foreach ($paginas as $rows) { 
-          echo $rows->nome;
-        }
-      ?>
-      </div>
-      </div>
-  </div>
+  
 
   <div class="tab-pane" id="templates">
     <script src="ckeditor/ckeditor.js"></script>

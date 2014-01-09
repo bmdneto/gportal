@@ -1,30 +1,16 @@
 <?php
-//  Configurações de Conexão com o Banco De Dados 
-// ==============================
-$_SG['conectaServidor'] = true;    // Abre uma conexão com o servidor MySQL
-$_SG['abreSessao'] = true;         // Inicia a sessão com um session_start()
+    mysql_connect("localhost", "igor", "152040mr") or die("Não foi possível conectar: " . mysql_error());
+      
+    mysql_select_db("g_portais");
 
-$_SG['caseSensitive'] = false;     // Usar case-sensitive
+    $query = "SELECT * FROM usuarios_teste WHERE username='igor'";
+    $query_info = "SELECT * FROM portais_teste WHERE admin='igor'";
 
-$_SG['validaSempre'] = true;       // Deseja validar o usuário e a senha a cada carregamento de página
+    $result = mysql_query($query) or die(mysql_error());
+    $result_info = mysql_query($query_info) or die(mysql_error());
 
-$_SG['servidor'] = 'localhost';    // Servidor MySQL
-
-$_SG['usuario'] = 'igor';          // Usuário MySQL
-
-$_SG['senha'] = '152040mr';                // Senha MySQL
-
-$_SG['banco'] = 'g_portais';            // Banco de dados MySQL
-
-//$_SG['paginaLogin'] = 'home.php'; // Página de login
-
-//$_SG['tabela'] = 'usuarios';       // Nome da tabela onde os usuários são salvos
-
-// ==============================
-
-
-
-// Verifica se precisa fazer a conexão com o MySQL
-	$_SG['link'] = mysql_connect($_SG['servidor'], $_SG['usuario'], $_SG['senha']) or die("MySQL: Não foi possível conectar-se ao servidor [".$_SG['servidor']."].");
-	mysql_select_db($_SG['banco'], $_SG['link']) or die("MySQL: Não foi possível conectar-se ao banco de dados [".$_SG['banco']."].");
+    $row = mysql_fetch_array($result, MYSQL_ASSOC);
+    $row_info = mysql_fetch_array($result_info, MYSQL_ASSOC);
+      
+    mysql_free_result($result);
 ?>

@@ -16,7 +16,6 @@
   	<h4>Lista de páginas existentes em cada portal</h4>
   	<hr>
   	
-  	<form class="form-horizontal" role="form" action="Gerencia_paginas" method="POST">
   		<div class="form-group">
         	<label for="diretorio" class="col-lg-2 control-label">Escolha o portal</label>
         	<div class="col-lg-10">
@@ -31,13 +30,29 @@
 
 			    </select>
 			    <br />
-			    <button type="submit" name="botaoListaPaginas" class="btn btn-primary" onclick="carregaItens()">
-			    	<span class="glyphicon glyphicon-search"></span> Buscar páginas
-			    </button>
+          <button class="btn btn-default" id="btn-show">
+            <span class="glyphicon glyphicon-search"></span> Exibir
+          </button>
 			</div>
 		</div>
+      
+      <div class="tab-pane" id="paginas">
+    <div class="panel panel-default" id="show">
+      <div class="panel-heading">
+        <h3 class="panel-title">Páginas</h3>
+      </div>
+      <div class="panel-body">
+      <?php
+        foreach ($paginas as $rows) { 
+          echo $rows->nome."<br>";
+        }
+      ?>
+      </div>
+      </div>
+  </div>
 
-    </form>
+
+
     <hr />
 
   </div>
