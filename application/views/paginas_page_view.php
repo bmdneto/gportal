@@ -42,13 +42,22 @@
         <h3 class="panel-title">Páginas</h3>
       </div>
       <div class="panel-body">
-      <?php
-        foreach ($paginas as $rows) { 
-          echo $rows->nome."<br>";
-        }
-      ?>
+        
+        <?php
+          foreach ($paginas as $rows) { 
+            echo $rows->nome."<br>";
+          }
+        ?>
+
+        <form class="form-horizontal" role="form" action="Gerencia_paginas" method="POST">
+          <button class="btn btn-default" id="addPage">Adicionar página</button>
+        </form>
+
       </div>
       </div>
+
+
+
   </div>
 
 
@@ -57,7 +66,6 @@
 
   </div>
   <!-- Fim listagem -->
-
 
 
 

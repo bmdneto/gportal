@@ -9,16 +9,7 @@
 
 		public function index()
 		{
-			if(isset($_POST['botaoListaPaginas'])) {
-				//echo $_POST['listaPaginas'];
-				$this->load->helper('directory');
-				$map = directory_map($_POST['listaPaginas'],1);
-
-				foreach ($map as $i) {
-					if (!is_dir($i))
-						echo $i.' ';
-				}
-			}
+			echo "oie";
 
 			//$this->load->helper('url');
 			//redirect('principal', 'refresh');

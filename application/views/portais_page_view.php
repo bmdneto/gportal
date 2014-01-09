@@ -135,6 +135,7 @@
         </div>
       </div>
 
+
       <!-- descricao -->
       <div class="form-group">
         <label for="descricaoPortal" class="col-lg-2 control-label">Descrição</label>
@@ -180,6 +181,7 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
 
     </form>
 
