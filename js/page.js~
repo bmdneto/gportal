@@ -1,0 +1,6 @@
+$(document).ready(function(){
+	$("#show").hide();
+  $("#teste").click(function(){
+    $("#show").show();
+  });
+});

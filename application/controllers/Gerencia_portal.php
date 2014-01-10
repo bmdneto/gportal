@@ -16,7 +16,7 @@
 			}
 
 			$this->load->helper('url');
-			//redirect('principal', 'refresh');
+			redirect('principal', 'refresh');
 		}
 
 		public function Remove_portal()

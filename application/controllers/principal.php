@@ -20,7 +20,7 @@
 		      	$this->load->model('Idioma');
 		      	$this->load->model('Model_Paginas');
 				$query = $this->Idioma->get_results();
-				$consultaPaginas = $this->Model_Paginas->consultaPaginas(70);
+				$consultaPaginas = $this->Model_Paginas->consultaPaginas(77);
 				if(isset($language))
 				{
 					$language = $_POST['optionsRadios'];
