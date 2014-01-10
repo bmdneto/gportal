@@ -32,7 +32,6 @@
       </thead>
 
       <!-- Laço que exibe os portais do controller: principal.php -->
-
       <?php foreach ($query->result() as $row): ?>
         <?php if ($row->admin == $username) { ?>
         <tr>
@@ -106,7 +105,7 @@
           <select class="form-control" name="diretorioPortal">
             <option value="default" selected="selected">Default</option>
 
-            <!-- seleciona todos os portals em que o usuário é admin -->
+            <!-- seleciona todos os portais em que o usuário é admin -->
             <?php foreach ($query->result() as $row): ?>
               <?php if ($row->admin == $username) { ?>
 
@@ -134,6 +133,7 @@
           </select>
         </div>
       </div>
+
 
       <!-- descricao -->
       <div class="form-group">
@@ -180,6 +180,7 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
 
     </form>
 

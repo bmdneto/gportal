@@ -21,7 +21,6 @@ class Model_Gerencia_portal extends CI_Model
 	// funcao para salvar os dados no BD e criar a URL
 	function inserirEntrada()
 	{
-
 		// se o diretório for default, acrescenta apenas o nome do portal, senão, concatena o novo diretorio
 		if ($_POST['diretorioPortal'] == 'default') {
 			$this->url	= 'sites/' . $_POST['nomePortal'];
@@ -64,6 +63,25 @@ class Model_Gerencia_portal extends CI_Model
 				</script>";
 			}
 
+		}
+
+
+		//inserção da página index na tabela páginas
+		$this->db->select('id_portal');
+		$this->db->where('nome', $this->nomePortal);
+		$sql2 = $this->db->get('portais_teste');
+		
+
+		foreach ($sql2->result() as $i) {
+			echo $i->id_portal;
+			$data = array(
+			   'nome' => 'index' ,
+			   'url' => $this->url ,
+			   'portal_pai' => $i->id_portal,
+			   'tipo_pagina' => 1
+			);
+			$this->db->insert('paginas', $data); 
+			// Produces: INSERT INTO mytable (title, name, date) VALUES ('My title', 'My name', 'My date')
 		}
 
 

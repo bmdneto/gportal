@@ -3,8 +3,8 @@
 		
 		function __construct()
 		{
-		//call the Model constructor
-		parent::__construct();
+			//call the Model constructor
+			parent::__construct();
 		}
 
 		function consultaPaginas($id_portal)
