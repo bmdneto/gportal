@@ -1,6 +1,3 @@
-<script type="text/javascript"></script>
-
-
 <div class="tab-conteudo" id="tabs5">
 	<h3>Gerenciamento de páginas</h3>
 
@@ -57,13 +54,6 @@
 
   </div>
   <!-- Fim listagem -->
-
-
-
-
-
-  <div class="tab-pane" id="edicaoPaginas">Edição</div>
- 
 </div>
 
 </div>
