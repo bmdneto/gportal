@@ -45,10 +45,10 @@
         
         <?php
           foreach ($paginas as $rows) { 
-            echo $rows->nome."<br>";
+            echo $rows->nome."<br><br>";
           }
         ?>
-
+        <br>
         <form class="form-horizontal" role="form" action="Gerencia_paginas" method="POST">
           <button class="btn btn-default" id="addPage">Adicionar página</button>
         </form>
