@@ -311,10 +311,6 @@
   </div>
   <!-- FIM edição de portais -->
 
-
-
-  
-
   <div class="tab-pane" id="templates">
     <script src="ckeditor/ckeditor.js"></script>
     <h4>Componentes do template</h4>
