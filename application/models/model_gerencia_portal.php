@@ -73,7 +73,7 @@ class Model_Gerencia_portal extends CI_Model
 		
 
 		foreach ($sql2->result() as $i) {
-			echo $i->id_portal;
+			//echo $i->id_portal;
 			$data = array(
 			   'nome' => 'index' ,
 			   'url' => $this->url ,

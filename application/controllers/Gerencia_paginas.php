@@ -9,7 +9,11 @@
 
 		public function index()
 		{
-			echo "oie";
+			if(isset($_POST['botaoAddPage'])) {
+				$this->load->helper('url');
+				$this->load->model('model_paginas','',TRUE);
+				$this->model_paginas->addPagina();
+			}
 
 			//$this->load->helper('url');
 			//redirect('principal', 'refresh');
