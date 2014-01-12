@@ -3,10 +3,13 @@
 	<ul class="nav nav-tabs" id="myTab">
     <li class="active"><a data-toggle="tab" href="#listaPortal">Lista de Portais</a></li>
     <li><a data-toggle="tab" href="#criarPortal">Criar Portais</a></li>
-    <li><a data-toggle="tab" href="#editaPortal">Edição de Portais</a></li>
+    <li><a data-toggle="tab" href="#editaPortal">Editar Portais</a></li>
+
+<!--
     <li><a data-toggle="tab" href="#paginas">Gerenciar páginas</a></li>
     <li><a data-toggle="tab" href="#templates">Gerenciar templates</a></li>
     <li><a data-toggle="tab" href="#configuracoes">Configurações</a></li>
+-->
   </ul>
 
 <div class="tab-content">
@@ -126,10 +129,9 @@
         <div class="col-lg-10">
           <select class="form-control" name="tipoPortal">
             <option value="professor">Professor</option>
+            <option value="aluno">Aluno</option>
             <option value="projeto">Projeto</option>
             <option value="laboratorio">Laboratório</option>
-            <option value="grupo">Grupo de pesquisa</option>
-            <option value="aluno">Aluno</option>
           </select>
         </div>
       </div>
@@ -197,11 +199,6 @@
 
     <form class="form-horizontal" role="form" action="Gerencia_portal/Edita_portal" method="POST">
 
-    <?php echo $row->id_portal; ?>
-          <?php echo $row->nome; ?>
-          <?php echo $row->url; ?>
-          <?php echo $username; ?>
-          <?php echo $row->descricao; ?>
     <!-- Laço que exibe o nome de todos os portais em que o usuário é administrador -->
     <div class="form-group">
       <label for="descricaoPortal" class="col-lg-2 control-label">Portal a ser editado</label>
@@ -223,8 +220,6 @@
     </div>
     <hr>
 
->>>>>>> c59e2b81f9c14721bc8654a21608d414c3c5e8bb
-
       <!-- edita nome -->
       <div class="form-group">
         <label for="EditaNomePortal" class="col-lg-2 control-label">Alterar o nome do portal</label>
@@ -232,28 +227,6 @@
           <input type="text" class="form-control" name="editaNomePortal" placeholder="Novo nome do portal">
         </div>
       </div>
-
-      <!-- muda url
-      <div class="form-group">
-        <label for="diretorio" class="col-lg-2 control-label">Alterar o diretório</label>
-        <div class="col-lg-10">
-
-          <select class="form-control" name="editaDiretorioPortal">
-            <option value="default" selected="selected">Não alterar</option>
-
-            <?php foreach ($query->result() as $row): ?>
-              <?php if ($row->admin == $username) { ?>
-
-                <option value="<?php echo $row->url; ?>"><?php echo $row->url; ?></option>
-              
-              <?php } ?>
-            <?php endforeach; ?>
-
-          </select>
-        </div>
-      </div>
-      -->
-
 
 
       <!-- tipo de portal 
@@ -263,10 +236,10 @@
         <label for="tipoPortal" class="col-lg-2 control-label">Alterar o tipo de portal</label>
         <div class="col-lg-10">
           <select class="form-control">
-            <option>Professor</option>
-            <option>Projeto</option>
-            <option>Página pessoal</option>
-            <option>Grupo de pesquisa</option>
+            <option value="aluno">Aluno</option>
+            <option value="laboratorio">Laboratório</option>
+            <option value="professor">Professor</option>
+            <option value="projeto">Projeto</option>
           </select>
         </div>
       </div>
@@ -310,6 +283,8 @@
 
   </div>
   <!-- FIM edição de portais -->
+
+
 
   <div class="tab-pane" id="templates">
     <script src="ckeditor/ckeditor.js"></script>
@@ -367,5 +342,7 @@
 
   <div class="tab-pane" id="templates">templates</div>
   <div class="tab-pane" id="configuracoes">config</div>
+
+
 </div>
 </div>

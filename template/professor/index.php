@@ -1,9 +1,8 @@
-<?php include('conexao.php');?>
 <!doctype html>
 <html lang="pt-br">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title><?php echo ucfirst($row_info['nome'])?></title>
+<title>Principal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -26,12 +25,15 @@
     <div class="row">
       
      <div class="col-md-12 topo-template">
-      
-      
-      <div class="img"><img src="<?php echo $row['foto'];?>" alt=""></div>
+      <div class="img"><img src="" alt=""></div>
       <h1>Professor</h1>
       <div class="info-template col-md-3">
-        <?php echo $row_info['informacoes']?>
+        <p><strong>Professor adjunto I</strong></p>
+        <p><strong>UNIVERSIDADE FEDERAL DO MARANHÃO</strong></p>
+        <p><strong>DEPARTAMENTO DE INFORMÁTICA</strong></p>
+        <p><strong>Endereço</strong></p>
+        <p>Av. dos Portugueses, S/N, Campus do Bacanga</p>
+        
       </div>
       <div class="col-md-3 barra-info">email.email@email.com</div>
     </div>
@@ -40,14 +42,15 @@
 <div class="row">
       <div class="col-md-12 menu-template">
         <ul>
-            <?php
-            while($row_menu = mysql_fetch_array($result_menu)){
-              echo "<li><a href=\"\">".ucfirst($row_menu['nome'])."</a></li>";
-            }
-            ?>
+            <li><a href="">Pesquisa</a></li>
+            <li><a href="">Extensão</a></li>
+            <li><a href="">Ensino</a></li>
+            <li><a href="">Notas de aula</a></li>
+            <li><a href="">Links</a></li>
         </ul>
       </div>
 </div>
+<div class="row">
 <div class="row">
       <div class="col-md-12 corpo-template">
             <div class="row">

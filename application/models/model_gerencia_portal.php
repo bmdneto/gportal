@@ -121,8 +121,15 @@ class Model_Gerencia_portal extends CI_Model
 			$source = 'template/professor';	
 		}
 		
-		elseif ($_POST['tipoPortal'] == 'projeto') {
+		if ($_POST['tipoPortal'] == 'aluno') {
+			$source = 'template/aluno';	
 
+		}
+		if ($_POST['tipoPortal'] == 'projeto') {
+			$source = 'template/projeto';
+		}
+		if ($_POST['tipoPortal'] == 'laboratorio') {
+			$source = 'template/laboratorio';
 		}
 
 		$dest = $this->url;
@@ -160,24 +167,17 @@ class Model_Gerencia_portal extends CI_Model
 			delTree($url);
 			$this->db->where('id_portal', $var);
 			$this->db->delete('portais_teste');
+
+			//remove as páginas
+			$this->db->where('portal_pai', $var);
+			$this->db->delete('paginas');
 		}
 	}
 
 
 	function editarPortal($var)	{
 
-		/*
-		// edição de diretório
-		if ($_POST['editaDiretorioPortal'] == 'default') {
-			//$this->url	= 'sites/' . $_POST['editaNomePortal'];
-			//$this->portal_pai = 'sites/';
-		}
-		else {
-			$this->url = $_POST['editaDiretorioPortal'] .'/'. $_POST['editaNomePortal'];
-			$this->portal_pai = $_POST['editaDiretorioPortal'];
-		}
-		*/
-		//echo $url;
+
 
 		$this->nomePortal 	= $_POST['editaNomePortal'];
 		$this->template		= 1;

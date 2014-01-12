@@ -46,8 +46,19 @@
 			{
 				//$this->db->query($sql2);
 				$this->load->helper('file');
-				$data = 'Some file data';
-				write_file('./'.$this->url.'/'.$this->nomePagina.'.php', $data);
+
+				if ($this->tipoPagina == 'news') {
+					$data = 'PAGINA NEWS';
+					write_file('./'.$this->url.'/'.$this->nomePagina.'.php', $data);
+				}
+				if ($this->tipoPagina == 'galeria') {
+					$data = 'PAGINA GALERIA';
+					write_file('./'.$this->url.'/'.$this->nomePagina.'.php', $data);
+				}
+				if ($this->tipoPagina == 'upload') {
+					$data = 'PAGINA UPLOAD';
+					write_file('./'.$this->url.'/'.$this->nomePagina.'.php', $data);
+				}
 			}
 			
 			echo 'Pagina criada com sucesso!';
