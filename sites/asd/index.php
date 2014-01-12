@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Principal</title>
+<title><?php echo ucfirst($row_info['nome'])?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -40,11 +40,11 @@
 <div class="row">
       <div class="col-md-12 menu-template">
         <ul>
-            <li><a href="">Pesquisa</a></li>
-            <li><a href="">Extensão</a></li>
-            <li><a href="">Ensino</a></li>
-            <li><a href="">Notas de aula</a></li>
-            <li><a href="">Links</a></li>
+            <?php
+            while($row_menu = mysql_fetch_array($result_menu)){
+              echo "<li><a href=\"\">".ucfirst($row_menu['nome'])."</a></li>";
+            }
+            ?>
         </ul>
       </div>
 </div>

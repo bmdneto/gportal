@@ -19,18 +19,32 @@
 			$this->tipoPagina	= $_POST['tipoPagina'];
 			$this->url 			= $_POST['portalPagina'];
 
-			echo $this->url;
+			//echo $this->url;
 
-			// inserção
-			$sql = "INSERT INTO paginas (nome, tipo_pagina) 
+			$this->db->select('id_portal');
+			$this->db->where('url', $this->url );
+			$sql = $this->db->get('portais_teste');
+			
+			foreach ($sql->result() as $i) {
+				//echo $i->id_portal;
+				$data = array(
+				   'portal_pai' => $i->id_portal,
+				   'nome'		=> $this->nomePagina,
+				   'tipo_pagina'=> $this->tipoPagina
+				);
+				$this->db->insert('paginas', $data); 
+				// Produces: INSERT INTO mytable (title, name, date) VALUES ('My title', 'My name', 'My date')
+			}
+
+			/* inserção
+			$sql2 = "INSERT INTO paginas (nome, tipo_pagina) 
 					VALUES (".$this->db->escape($this->nomePagina).", 
 							".$this->db->escape($this->tipoPagina).")";
-
+			*/
 
 			if (isset($_POST['botaoAddPage'])) 
 			{
-				$this->db->query($sql);
-				
+				//$this->db->query($sql2);
 				$this->load->helper('file');
 				$data = 'Some file data';
 				write_file('./'.$this->url.'/'.$this->nomePagina.'.php', $data);
@@ -38,6 +52,7 @@
 			
 			echo 'Pagina criada com sucesso!';
 			echo $_POST['botaoAddPage'];
+
 		}
 	}
 ?>
