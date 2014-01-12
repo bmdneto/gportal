@@ -38,27 +38,16 @@
 		</div>
       
       <div class="tab-pane" id="paginas">
-    <div class="panel panel-default" id="show">
-      <div class="panel-heading">
-        <h3 class="panel-title">Páginas</h3>
-      </div>
-      <div class="panel-body">
-        
-        <?php
-          foreach ($paginas as $rows) { 
-            echo $rows->nome."<br><br>";
-          }
-        ?>
-      </div>
-      </div>
+   
     <div class="tab-pane" id="paginas">
 
       <div class="panel panel-default" id="show">
 
-        <div class="panel-heading">
-          <h3 class="panel-title">Páginas</h3>  
+        <div class="panel-heading" style="display:table;width: 100%;">
+          <h3 class="panel-title" style="display: block; float:left;">Páginas</h3>
+          <button id="btn-hide" class="btn btn-default" style="float:right; padding:5px 10px;">X</button>  
         </div>
-
+ 
         <div class="panel-body">
           
           <!--
@@ -96,9 +85,12 @@
           
             <button class="btn btn-default" id="addPage">Adicionar página</button>
             <br /><br />
-
+          <hr>
+          <div id="add-show">
+          <button id="btn-add-hide" class="btn btn-default" style="float:right; padding:5px 10px;">X</button>
           <form class="form-horizontal" role="form" action="Gerencia_paginas" method="POST">
-
+            
+          <br>  
             <!-- titulo da pag -->
             <div class="form-group">
               <label for="tituloPagina" class="col-lg-2 control-label">Título da Página</label>
@@ -142,18 +134,7 @@
             <button type="submit" name="botaoAddPage" class="btn btn-primary" >Enviar</button>
 
           </form>
-
-
-
-          <!-- Formulário pada adição de páginas-->
-          <form method="POST" action="Gerencia_paginas">
-            
-
-
-          </form>
-
-
-
+          </div>
         </div>
 
       </div>

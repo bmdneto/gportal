@@ -51,6 +51,7 @@
 	overflow:hidden;
 	padding-left: 40px;
 	text-align: justify;
+	width: 75%;
 }
 
 .conteudo{
@@ -90,7 +91,7 @@
 	height: 1500px;
 	padding: 0 !important;
 	margin: 0 !important;
-	width: 214px;
+	width: 22%;
 	float: left;
 }
 #menu div{

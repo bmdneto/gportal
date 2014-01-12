@@ -1,6 +1,16 @@
 $(document).ready(function(){
 	$("#show").hide();
+	$("#add-show").hide();
   $("#btn-show").click(function(){
     $("#show").show();
+  });
+  $("#btn-hide").click(function(){
+    $("#show").hide();
+  });
+  $("#addPage").click(function(){
+    $("#add-show").show();
+  });
+  $("#btn-add-hide").click(function(){
+    $("#add-show").hide();
   });
 });

@@ -41,4 +41,4 @@
 				</li>
 			</ul>
 		</div>
-		<div id="content-box" class="row col-md-10">
+		<div id="content-box" class="row">
