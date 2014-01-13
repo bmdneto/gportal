@@ -24,9 +24,10 @@
 			$this->db->select('id_portal');
 			$this->db->where('url', $this->url );
 			$sql = $this->db->get('portais_teste');
-			
+
+
 			foreach ($sql->result() as $i) {
-				//echo $i->id_portal;
+				echo $i->id_portal;
 				$data = array(
 				   'portal_pai' => $i->id_portal,
 				   'nome'		=> $this->nomePagina,
